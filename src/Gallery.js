@@ -1,25 +1,43 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import Rose from './rose.jpeg'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+const divStyle = {
+  width: '400px',
+};
 
 class Gallery extends React.Component {
-  renderImage(imageUrl) {
+  renderImage(image) {
     return (
       <div>
-        <img src={imageUrl} />
+        <img src={process.env.PUBLIC_URL + '/images/brain/' + image} />
       </div>
     );
   }
-
   render() {
     return (
-      <div className="gallery">
-        <div className="images">
-          {this.props.imageUrls.map(imageUrl => this.renderImage(imageUrl))}
-        </div>
+      <div>
+      <div  style={divStyle}>
+      <Carousel>
+        {this.props.images.map(image => this.renderImage(image))}
+      </Carousel>
+      </div>
+
+
       </div>
     );
   }
 }
+
+// <div className="gallery">
+// <img src={Rose}></img>
+// <div className="images">
+//    {this.props.images.map(image => this.renderImage(image))}
+// </div>
+// </div>
 Gallery.propTypes = {
-  imageUrls: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+  images: PropTypes.array.isRequired
 };
 export default Gallery;
