@@ -1,23 +1,71 @@
-import React from 'react';
-import './App.css';
-import Gallery from './Gallery';
+import React from 'react'
+import './App.css'
+import logo from './logo.png'
+import {Route, NavLink, Switch} from 'react-router-dom'
+import Content from './Components/content'
+import NormalAnatomy from './contentComponents/CT_normalAnatomy'
+import NormalHead from './contentComponents/normalHead'
+import './index.css'
+import Footer from "./Components/footer";
 
-const images = [
-  'IMG-0003-00122.jpg',
-  'IMG-0003-00123.jpg',
-  'IMG-0003-00124.jpg',
-  'IMG-0003-00125.jpg',
-  'IMG-0003-00126.jpg',
-]
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            showMenu: false
+        };
 
-const str = 'sdfg'
+        this.handleClick = this.handleClick.bind(this)
+    }
 
-function App() {
-  return (
-    <div className="App">
-      <Gallery images={images}></Gallery>
-    </div>
-  );
+    handleClick() {
+        this.setState(prevState => {
+            return ({
+                showMenu: !prevState.showMenu
+            })
+
+        });
+
+    }
+
+    render() {
+        return (
+            <div>
+                <header>
+                    <div className='navbar_'>
+                        <a href="/" className='logo_'>
+                            <img className='logoimg' src={logo}/>
+                        </a>
+                    </div>
+                    <nav>
+                        <div className={this.state.showMenu ? "navtop responsive" : "navtop"}>
+                            <NavLink to={{
+                                pathname: "/",
+                            }} exact>Home</NavLink>
+                            <NavLink to={{
+                                pathname: "/normalanatomy",
+                            }}>CT Normal Anatomy</NavLink>
+                            <a href="#">Oncology Cases</a>
+                            <a href="#">Other</a>
+                            <a href="#">About</a>
+                            <div className="block_search">
+                                <input type="text" className="input_search"/>
+                                <button className="btn_search" type="button">Search</button>
+                            </div>
+                            <a href="#" onClick={this.handleClick} className="menu_icon">&#9776;</a>
+                        </div>
+                    </nav>
+
+                </header>
+                <Switch>
+                    <Route path="/" exact component={Content}/>
+                    <Route path="/normalanatomy" component={NormalAnatomy}/>
+                    <Route path="/normalhead" component={NormalHead}/>
+                </Switch>
+                <Footer/>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
