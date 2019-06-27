@@ -1,17 +1,8 @@
-body:after {
-	content:
-	  URL("./NormalBrainImges/IMG-0003-00123.jpg")
-		;
-	display: none;
-}
-
-
 * {
 	margin: 0;
 	padding: 0;
 
 }
-
 
 li{
 	text-decoration: none;
@@ -122,9 +113,6 @@ button:focus{outline:0}
 
 }
 
-.card_ {
-	cursor: pointer;
-}
 .btn_search:hover{
 	background-color: #fff;
 	color: #000;
@@ -159,7 +147,6 @@ button:focus{outline:0}
 
 .slaider {
 	width: 40%;
-
 	margin-bottom: 20px;
 }
 
@@ -191,20 +178,18 @@ button:focus{outline:0}
  	color: #fff;
  	text-align: center;
 	max-width: 40%;
-
-
 }
 
 .anatomy_part {
-	width: 100%;
+	max-width: 400px;
+	display: flex;
+	justify-content: center;
 }
 
 
 ._pink{
 	background: pink;
 }
-
-
 
 .button_back{
 	color: #fff;
@@ -244,10 +229,6 @@ hr {
 	border-bottom: 0;
 	border-left: 0;
 	border-right: 0;
-
-
-
-
 	margin: 15px;
 }
 
@@ -386,7 +367,7 @@ hr {
 		align-items: center;
 	}
 	.anatomy_part {
-	width: 100%;
+	width: 70%;
 	}
 	.content_anatomy_part{
 		align-items: center;

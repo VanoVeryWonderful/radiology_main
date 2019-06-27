@@ -7,11 +7,6 @@ import Slaider from 'react-slick'
 import "../slick-carousel/slick/slick.css";
 import "../slick-carousel/slick/slick-theme.css";
 
-
-
-
-
-
 export default class Content extends React.Component {
   render(){
 

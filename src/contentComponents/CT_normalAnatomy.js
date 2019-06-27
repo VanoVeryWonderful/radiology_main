@@ -9,10 +9,6 @@ import pelvisImg from '../NormalAnatomyImg/IMG-0003-00170.jpg'
 import faceImg from '../NormalAnatomyImg/IMG-0001-00082.jpg'
 import AnatomyPart from '../contentComponents/anatomyPart'
 
-
-
-
-
 export default class NormalAnatomy extends React.Component {
   constructor(){
     super()
@@ -33,8 +29,6 @@ export default class NormalAnatomy extends React.Component {
       abdomenImg: abdomenImg,
       faceImg: faceImg,
       pelvisImg: pelvisImg,
-
-
     }
   }
   goBack = () => {
@@ -44,8 +38,7 @@ export default class NormalAnatomy extends React.Component {
   }
   render(){
     console.log(this.props)
-
-    return(
+      return(
       <main className="all_content">
         <h2 className = "main_name">CT Normal Anatomy</h2>
         <a className="button_back" onClick = {this.goBack}>&larr;Back

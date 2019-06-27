@@ -4,15 +4,15 @@ import logo from './logo.png'
 import {Route, NavLink, Switch} from 'react-router-dom'
 import Content from './Components/content'
 import NormalAnatomy from './contentComponents/CT_normalAnatomy'
-import NormalHead from './contentComponents/normalHead'
 import './index.css'
+import WheelBrain from './contentComponents/NormalWheelBrain'
 import Footer from "./Components/footer";
 
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            showMenu: false
+            showMenu: false,
         };
 
         this.handleClick = this.handleClick.bind(this)
@@ -60,7 +60,7 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/" exact component={Content}/>
                     <Route path="/normalanatomy" component={NormalAnatomy}/>
-                    <Route path="/normalhead" component={NormalHead}/>
+                    <Route path="/normalhead" component={WheelBrain}/>
                 </Switch>
                 <Footer/>
             </div>
